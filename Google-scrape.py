@@ -1,8 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 from urlparse import urlparse
+from sys import argv
 import time
 import random
+script, qry = argv
 
 USER_AGENT_CHOICES = [
     'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:23.0) Gecko/20100101 Firefox/23.0',
@@ -66,13 +68,14 @@ def scrape_google(search_term, number_results, language_code):
 
 
 if __name__ == '__main__':
-    keywords = ['any query string']
+    #keywords = ['any query string']
+    
     data = []
     newdata = []
     time.sleep(random.randint(120,480))
     for keyword in keywords:
         try:
-            results = scrape_google(keyword, 300, "en")
+            results = scrape_google(qry, 300, "en")
             for result in results:
                 parsed_uri = urlparse(result)
                 data.append(parsed_uri.netloc)
