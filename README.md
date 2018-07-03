@@ -2,8 +2,8 @@
 Scape Google Results
 
 dependencies python Modules need to be installed
-pip install requests
-pip install BeautifulSoup4
+<li>pip install requests</li>
+<li>pip install BeautifulSoup4</li>
 
 <h1>HOW TO USE</h1>
 
